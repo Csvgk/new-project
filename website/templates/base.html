@@ -1,0 +1,28 @@
+{% load static %}
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Мій сайт{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'helloweb/style.css' %}">
+</head>
+<body>
+    <nav>
+        <a class="{% if request.resolver_match.url_name == 'index' %}active{% endif %}"
+           href="{% url 'index' %}">🏠 Головна</a>
+        <a class="{% if request.resolver_match.url_name == 'datetime' %}active{% endif %}"
+           href="{% url 'datetime' %}">🕒 Дата і час</a>
+        <a class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}"
+           href="{% url 'about' %}">🙋 Про мене</a>
+    </nav>
+
+    <main>
+        <div class="card">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+
+    {% block scripts %}{% endblock %}
+</body>
+</html>

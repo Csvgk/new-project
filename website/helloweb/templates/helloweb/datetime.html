@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <h1>🕒 Поточний час</h1>
+    <div class="clock" id="clock">{{ time }}</div>
+    <ul>
+        <li><span>День тижня</span> {{ day_name }}</li>
+        <li><span>Дата</span> {{ day }} {{ month_name }} {{ year }}</li>
+        <li><span>Номер тижня</span> {{ week }}</li>
+    </ul>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'helloweb/clock.js' %}"></script>
+{% endblock %}
