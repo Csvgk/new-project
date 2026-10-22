@@ -15,12 +15,12 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+print(BASE_DIR)
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-cz3@1w^iu3lx20@$%dlknq(w$j_f9-5y^mu-o50h7qk)x@$4pp'
+SECRET_KEY = 'django-insecure--p_r^l$l-%8#l*uf!37!!n=%81qw&0+$o05h5035clc4f%w#e0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'helloweb',
+    'blog',
 ]
 
 MIDDLEWARE = [
@@ -103,9 +104,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/6.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'uk'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Kyiv'
 
 USE_I18N = True
 
@@ -116,6 +117,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [BASE_DIR / 'static']
 
 
 # Email
@@ -126,3 +128,4 @@ MAILERS = {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
 }
+
